@@ -1,8 +1,8 @@
-package com.pedrosoares.desafioconcrete.core
+package com.pedrosoares.desafioconcrete.core.bases
 
 interface BaseContract {
 
-    interface View<P : BaseContract.Presenter> {
+    interface View<P : Presenter> {
         fun createPresenter(): P
     }
 

@@ -1,7 +1,10 @@
 package com.pedrosoares.desafioconcrete.data.entity
 
-data class ItemsItem(
-    val stargazersCount: Int? = null,
+import com.google.gson.annotations.SerializedName
+
+data class Items(
+    @SerializedName("stargazers_count")
+    val stargazersCount: Int,
     val pushedAt: String? = null,
     val subscriptionUrl: String? = null,
     val language: String? = null,
@@ -20,7 +23,8 @@ data class ItemsItem(
     val statusesUrl: String? = null,
     val sshUrl: String? = null,
     val license: Any? = null,
-    val fullName: String? = null,
+    @SerializedName("full_name")
+    val fullName: String,
     val size: Int? = null,
     val languagesUrl: String? = null,
     val htmlUrl: String? = null,
@@ -37,8 +41,10 @@ data class ItemsItem(
     val hasDownloads: Boolean? = null,
     val notificationsUrl: String? = null,
     val openIssuesCount: Int? = null,
-    val description: String? = null,
-    val createdAt: String? = null,
+    @SerializedName("description")
+    val description: String,
+    @SerializedName("created_at")
+    val createdAt: String,
     val watchers: Int? = null,
     val keysUrl: String? = null,
     val deploymentsUrl: String? = null,
@@ -51,7 +57,8 @@ data class ItemsItem(
     val disabled: Boolean? = null,
     val gitUrl: String? = null,
     val hasPages: Boolean? = null,
-    val owner: Owner? = null,
+    @SerializedName("owner")
+    val owner: Owner,
     val commitsUrl: String? = null,
     val compareUrl: String? = null,
     val gitCommitsUrl: String? = null,
@@ -74,5 +81,6 @@ data class ItemsItem(
     val watchersCount: Int? = null,
     val nodeId: String? = null,
     val homepage: String? = null,
-    val forksCount: Int? = null
+    @SerializedName("forks_count")
+    val forksCount: Int
 )

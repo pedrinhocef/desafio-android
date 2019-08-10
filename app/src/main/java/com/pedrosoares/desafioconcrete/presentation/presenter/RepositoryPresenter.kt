@@ -1,0 +1,31 @@
+package com.pedrosoares.desafioconcrete.presentation.presenter
+
+import com.pedrosoares.desafioconcrete.core.bases.BasePresenter
+import com.pedrosoares.desafioconcrete.model.usecase.RepositoryUseCase
+import com.pedrosoares.desafioconcrete.presentation.RepositoryPresentationContract
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+
+class RepositoryPresenter(private val view: RepositoryPresentationContract.RepositoryListView) : BasePresenter(),
+    RepositoryPresentationContract.RepositoryListPresenter {
+
+    private val repositoryUseCase = RepositoryUseCase()
+
+
+    override fun fetchRepository() {
+        view.loading()
+        val disposable = repositoryUseCase.getRepository()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                it.items.let { items ->
+                    view.populateRepository(items)
+                    view.success()
+                }
+            },
+                { view.error() })
+        compositeDisposable!!.add(disposable)
+    }
+
+
+}

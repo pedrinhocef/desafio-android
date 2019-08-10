@@ -1,17 +1,21 @@
 package com.pedrosoares.desafioconcrete.data.entity
 
+import com.google.gson.annotations.SerializedName
+
 data class Owner(
 	val gistsUrl: String? = null,
 	val reposUrl: String? = null,
 	val followingUrl: String? = null,
 	val starredUrl: String? = null,
-	val login: String? = null,
+	@SerializedName("login")
+	val login: String,
 	val followersUrl: String? = null,
 	val type: String? = null,
 	val url: String? = null,
 	val subscriptionsUrl: String? = null,
 	val receivedEventsUrl: String? = null,
-	val avatarUrl: String? = null,
+	@SerializedName("avatar_url")
+	val avatarUrl: String,
 	val eventsUrl: String? = null,
 	val htmlUrl: String? = null,
 	val siteAdmin: Boolean? = null,

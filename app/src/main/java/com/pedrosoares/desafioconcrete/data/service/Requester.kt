@@ -15,7 +15,7 @@ object Requester {
         get() {
 
             val interceptor = HttpLoggingInterceptor()
-            interceptor.level = HttpLoggingInterceptor.Level.BODY
+            interceptor.level = HttpLoggingInterceptor.Level.NONE
 
             val client = OkHttpClient.Builder()
             client.addInterceptor(interceptor)

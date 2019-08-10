@@ -1,4 +1,4 @@
-package com.pedrosoares.desafioconcrete.core
+package com.pedrosoares.desafioconcrete.core.bases
 
 import io.reactivex.disposables.CompositeDisposable
 
