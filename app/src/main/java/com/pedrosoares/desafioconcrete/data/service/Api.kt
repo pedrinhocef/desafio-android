@@ -6,6 +6,7 @@ import retrofit2.http.GET
 
 
 interface Api {
+
     @get:GET("repositories?q=language:Java&sort=stars&page=1")
     val allRepository: Observable<RepositoryResponse>
 }

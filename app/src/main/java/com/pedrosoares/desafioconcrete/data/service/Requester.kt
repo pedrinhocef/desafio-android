@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-class Requester {
+object Requester {
 
     private val URL = "https://api.github.com/search/"
     private var retrofit: Retrofit? = null
