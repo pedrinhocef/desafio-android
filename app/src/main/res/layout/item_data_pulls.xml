@@ -21,7 +21,7 @@
 			<TextView
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:id="@+id/text_name_repository"
+					android:id="@+id/text_title_pull"
 					android:textSize="16sp"
 					android:textStyle="bold"
 					android:maxLines="1"
@@ -32,38 +32,9 @@
 					android:layout_height="wrap_content"
 					android:id="@+id/text_description"
 					android:maxLines="2"
-					android:ellipsize="end" android:layout_marginTop="2dp"
+					android:ellipsize="end"
+					android:layout_marginTop="2dp"
 					android:layout_marginBottom="8dp"/>
-
-			<LinearLayout
-					android:orientation="horizontal"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content">
-
-				<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:id="@+id/text_count_fork"
-						android:layout_marginEnd="12dp"
-						android:textSize="16sp"
-						android:textStyle="bold"
-						android:textColor="@android:color/holo_orange_dark"
-						android:drawableStart="@drawable/ic_call_split_black_24dp"
-						android:drawableTint="@android:color/holo_orange_dark"
-						android:drawablePadding="4dp"/>
-
-				<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:id="@+id/text_count_star"
-						android:textSize="16sp"
-						android:textStyle="bold"
-						android:textColor="@android:color/holo_orange_dark"
-						android:drawableStart="@drawable/ic_star"
-						android:drawableTint="@android:color/holo_orange_dark"
-						android:drawablePadding="4dp"/>
-
-			</LinearLayout>
 		</LinearLayout>
 
 		<LinearLayout
@@ -76,7 +47,8 @@
 					android:layout_width="50dp"
 					android:layout_height="50dp"
 					android:id="@+id/image_avatar"
-					android:layout_gravity="center"/>
+					android:layout_gravity="center"
+					android:contentDescription="@string/user_image"/>
 
 			<TextView
 					android:layout_width="wrap_content"
@@ -90,7 +62,7 @@
 			<TextView
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:id="@+id/text_nick_name"
+					android:id="@+id/text_data"
 					android:layout_gravity="center"
 					android:textSize="12sp"/>
 

@@ -4,6 +4,7 @@ import com.pedrosoares.desafioconcrete.data.entity.pullrequests.PullsRequestsRes
 import com.pedrosoares.desafioconcrete.data.entity.repository.RepositoryResponse
 import io.reactivex.Observable
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
@@ -13,6 +14,6 @@ interface Api {
     fun allRepository(@Query("page") page: Int = 1): Observable<RepositoryResponse>
 
     @GET("repos/{criador}/{repositorio}/pulls")
-    fun allPullsRequests(@Query("criador") creator: String,
-                        @Query("repositorio") repository: String): Observable<List<PullsRequestsResponse>>
+    fun allPullsRequests(@Path("criador") creator: String,
+                         @Path("repositorio") repository: String): Observable<List<PullsRequestsResponse>>
 }

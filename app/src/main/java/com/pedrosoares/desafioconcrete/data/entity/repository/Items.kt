@@ -31,7 +31,7 @@ data class Items(
     val collaboratorsUrl: String? = null,
     val cloneUrl: String? = null,
     @SerializedName("name")
-    val name: String? = null,
+    val name: String,
     val pullsUrl: String? = null,
     val defaultBranch: String? = null,
     val hooksUrl: String? = null,

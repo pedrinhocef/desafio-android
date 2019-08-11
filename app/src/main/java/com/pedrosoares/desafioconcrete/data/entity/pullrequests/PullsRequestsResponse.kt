@@ -14,7 +14,7 @@ data class PullsRequestsResponse(
 	val diffUrl: String? = null,
 
 	@field:SerializedName("created_at")
-	val createdAt: String? = null,
+	val createdAt: String,
 
 	@field:SerializedName("assignees")
 	val assignees: List<Any?>? = null,
@@ -23,7 +23,7 @@ data class PullsRequestsResponse(
 	val requestedReviewers: List<Any?>? = null,
 
 	@field:SerializedName("title")
-	val title: String? = null,
+	val title: String,
 
 	@field:SerializedName("body")
 	val body: String? = null,
@@ -95,7 +95,7 @@ data class PullsRequestsResponse(
 	val assignee: Any? = null,
 
 	@field:SerializedName("user")
-	val user: User? = null,
+	val user: User,
 
 	@field:SerializedName("node_id")
 	val nodeId: String? = null,
