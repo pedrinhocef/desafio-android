@@ -1,4 +1,4 @@
-package com.pedrosoares.desafioconcrete.data.entity
+package com.pedrosoares.desafioconcrete.data.entity.repository
 
 data class License(
 	val name: String? = null,

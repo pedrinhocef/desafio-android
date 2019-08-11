@@ -1,4 +1,4 @@
-package com.pedrosoares.desafioconcrete.data.entity
+package com.pedrosoares.desafioconcrete.data.entity.repository
 
 import com.google.gson.annotations.SerializedName
 

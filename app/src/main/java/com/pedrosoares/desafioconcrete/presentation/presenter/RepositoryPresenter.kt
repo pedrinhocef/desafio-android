@@ -12,9 +12,9 @@ class RepositoryPresenter(private val view: RepositoryPresentationContract.Repos
     private val repositoryUseCase = RepositoryUseCase()
 
 
-    override fun fetchRepository() {
+    override fun fetchRepository(page: Int) {
         view.loading()
-        val disposable = repositoryUseCase.getRepository()
+        val disposable = repositoryUseCase.getRepository(page)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({

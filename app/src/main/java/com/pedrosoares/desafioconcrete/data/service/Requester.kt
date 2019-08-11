@@ -8,14 +8,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object Requester {
 
-    private val URL = "https://api.github.com/search/"
+    private val URL = "https://api.github.com/"
     private var retrofit: Retrofit? = null
 
     val service: Retrofit
         get() {
 
             val interceptor = HttpLoggingInterceptor()
-            interceptor.level = HttpLoggingInterceptor.Level.NONE
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
 
             val client = OkHttpClient.Builder()
             client.addInterceptor(interceptor)

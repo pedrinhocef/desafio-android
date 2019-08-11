@@ -1,6 +1,7 @@
-package com.pedrosoares.desafioconcrete.data.entity
+package com.pedrosoares.desafioconcrete.data.entity.repository
 
 import com.google.gson.annotations.SerializedName
+import com.pedrosoares.desafioconcrete.data.entity.repository.Items
 
 data class RepositoryResponse(
 	val totalCount: Int? = null,

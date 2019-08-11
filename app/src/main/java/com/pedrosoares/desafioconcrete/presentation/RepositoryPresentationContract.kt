@@ -1,7 +1,7 @@
 package com.pedrosoares.desafioconcrete.presentation
 
 import com.pedrosoares.desafioconcrete.core.bases.BaseContract
-import com.pedrosoares.desafioconcrete.data.entity.Items
+import com.pedrosoares.desafioconcrete.data.entity.repository.Items
 
 interface RepositoryPresentationContract {
 
@@ -13,6 +13,6 @@ interface RepositoryPresentationContract {
     }
 
     interface RepositoryListPresenter : BaseContract.Presenter {
-        fun fetchRepository()
+        fun fetchRepository(page: Int = 1)
     }
 }

@@ -1,4 +1,4 @@
-package com.pedrosoares.desafioconcrete.data.entity
+package com.pedrosoares.desafioconcrete.data.entity.repository
 
 import com.google.gson.annotations.SerializedName
 
@@ -30,6 +30,7 @@ data class Items(
     val htmlUrl: String? = null,
     val collaboratorsUrl: String? = null,
     val cloneUrl: String? = null,
+    @SerializedName("name")
     val name: String? = null,
     val pullsUrl: String? = null,
     val defaultBranch: String? = null,
@@ -43,7 +44,6 @@ data class Items(
     val openIssuesCount: Int? = null,
     @SerializedName("description")
     val description: String,
-    @SerializedName("created_at")
     val createdAt: String,
     val watchers: Int? = null,
     val keysUrl: String? = null,

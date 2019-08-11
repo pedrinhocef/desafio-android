@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">desafioConcrete</string>
+	<string name="no_connection">Sem conexão</string>
+	<string name="generic_error">Desculpe, algum erro aconteceu.</string>
+	<string name="message_try_again">Pressione o botão abaixo para tentar novamente.</string>
+	<string name="button_refresh">Imagem de botão de refresh</string>
 </resources>
