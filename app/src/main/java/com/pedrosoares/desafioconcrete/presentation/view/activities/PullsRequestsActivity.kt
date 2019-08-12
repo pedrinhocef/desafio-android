@@ -35,6 +35,7 @@ class PullsRequestsActivity : BaseActivity<PullsRequestsPresentationContract.Pul
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pulls_activity)
+        title = getString(R.string.pulls_list_activity)
         creator = intent.getStringExtra("creator")
         repo = intent.getStringExtra("repo")
 
