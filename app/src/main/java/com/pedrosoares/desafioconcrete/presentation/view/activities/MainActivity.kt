@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.pedrosoares.desafioconcrete.R
 import com.pedrosoares.desafioconcrete.core.bases.BaseActivity
+import com.pedrosoares.desafioconcrete.core.helper.NetworkChangeReceiver
+import com.pedrosoares.desafioconcrete.core.helper.NetworkChangeReceiver.Companion.networkChangeUnregisterReceiver
 import com.pedrosoares.desafioconcrete.core.helper.PaginationScroll
 import com.pedrosoares.desafioconcrete.data.entity.repository.Items
 import com.pedrosoares.desafioconcrete.presentation.RepositoryPresentationContract
@@ -132,6 +134,11 @@ class MainActivity : BaseActivity<RepositoryPresentationContract.RepositoryListP
         intent.putExtra("creator", it.owner.login)
         intent.putExtra("repo", it.name)
         startActivity(intent)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        networkChangeUnregisterReceiver(this)
     }
 
 }

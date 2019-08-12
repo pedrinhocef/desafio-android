@@ -31,13 +31,18 @@ class NetworkChangeReceiver : BroadcastReceiver() {
 
     companion object {
         private const val CONNECTIVITY_CHANGE = "android.net.conn.CONNECTIVITY_CHANGE"
+        private val intentFilter = IntentFilter(CONNECTIVITY_CHANGE)
+        private val networkChangeReceiver = NetworkChangeReceiver()
+
         fun FragmentActivity.networkChangeReceiver(connectionChangeCallback: ConnectionChangeCallback) {
-            val intentFilter = IntentFilter(CONNECTIVITY_CHANGE)
-            val networkChangeReceiver = NetworkChangeReceiver()
             this.registerReceiver(networkChangeReceiver, intentFilter)
             networkChangeReceiver.setConnectionChangeCallback(connectionChangeCallback)
         }
 
+        fun FragmentActivity.networkChangeUnregisterReceiver(connectionChangeCallback: ConnectionChangeCallback) {
+            this.unregisterReceiver(networkChangeReceiver);
+            networkChangeReceiver.setConnectionChangeCallback(connectionChangeCallback)
+        }
     }
 
 }

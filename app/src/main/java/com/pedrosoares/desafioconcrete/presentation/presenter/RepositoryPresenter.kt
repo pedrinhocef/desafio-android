@@ -18,8 +18,12 @@ class RepositoryPresenter(private val view: RepositoryPresentationContract.Repos
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 it.items.let { items ->
-                    view.populateRepository(items)
-                    view.success()
+                    if(items.isNotEmpty()) {
+                        view.populateRepository(items)
+                        view.success()
+                    } else {
+                        view.error()
+                    }
                 }
             },
                 { view.error() })

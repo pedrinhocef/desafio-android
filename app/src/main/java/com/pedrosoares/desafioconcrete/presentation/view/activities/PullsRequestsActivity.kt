@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.pedrosoares.desafioconcrete.R
 import com.pedrosoares.desafioconcrete.core.bases.BaseActivity
+import com.pedrosoares.desafioconcrete.core.helper.NetworkChangeReceiver
+import com.pedrosoares.desafioconcrete.core.helper.NetworkChangeReceiver.Companion.networkChangeUnregisterReceiver
 import com.pedrosoares.desafioconcrete.data.entity.pullrequests.PullsRequestsResponse
 import com.pedrosoares.desafioconcrete.presentation.PullsRequestsPresentationContract
 import com.pedrosoares.desafioconcrete.presentation.presenter.PullsRequestsPresenter
@@ -97,5 +99,16 @@ class PullsRequestsActivity : BaseActivity<PullsRequestsPresentationContract.Pul
         val intent = Intent(Intent.ACTION_VIEW)
         intent.data = Uri.parse(it.htmlUrl)
         startActivity(intent)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        networkChangeUnregisterReceiver(this)
     }
 }

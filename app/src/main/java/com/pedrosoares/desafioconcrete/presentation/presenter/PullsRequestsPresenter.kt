@@ -18,8 +18,12 @@ class PullsRequestsPresenter(private val view: PullsRequestsPresentationContract
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 it?.let {
-                    view.populatePullsRequests(it)
-                    view.success()
+                    if(it.isNotEmpty()) {
+                        view.populatePullsRequests(it)
+                        view.success()
+                    } else {
+                        view.error()
+                    }
                 }
             },
                 { view.error() })
